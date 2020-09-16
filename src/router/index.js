@@ -1,15 +1,29 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import Scafold from '@/components/scafold'
+import VueRouter from 'vue-router'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
-Vue.use(Router)
+import Home from '../views/Home.vue'
+import Scafold from '../components/scafold'
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'scafold',
-      component: Scafold
-    }
-  ]
+Vue.use(VueRouter)
+Vue.use(ElementUI);
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/scafold',
+    name: 'scafold',
+    component: Scafold
+  }
+]
+
+const router = new VueRouter({
+  routes
 })
+
+export default router
